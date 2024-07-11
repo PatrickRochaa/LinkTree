@@ -15,7 +15,6 @@ export function Header() {
         <div className="flex gap-4 font-medium">
           <Link to={"/"}>Página inicial</Link>
           <Link to={"/admin"}>Links</Link>
-          <Link to={"/admin/social"}>Rede Sociais</Link>
         </div>
 
         <button onClick={handleLogout}>
