@@ -1,14 +1,16 @@
 import { BiLogOut } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../services/fireBaseConnection";
 import { signOut } from "firebase/auth";
 
-//funçao para deslogar
-async function handleLogout() {
-  await signOut(auth);
-}
-
 export function Header() {
+  const navigate = useNavigate();
+
+  //funçao para deslogar
+  async function handleLogout() {
+    await signOut(auth);
+    navigate("/", { replace: true });
+  }
   return (
     <header className="w-full max-w-2xl mt-4 px-1">
       <nav className="w-full bg-white h-12 flex items-center justify-between rounded-md px-3">
