@@ -3,6 +3,7 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/input";
 import { FiTrash } from "react-icons/fi";
 import { db } from "../../services/fireBaseConnection";
+
 import {
   addDoc,
   collection,
@@ -34,7 +35,7 @@ export function Admin() {
   //armazenar lista de links
   const [links, setLinks] = useState<LinksProps[]>([]);
 
-  //observando e monitorando db em tempo real
+  //observando e monitorando links no db em tempo real
   useEffect(() => {
     const linksRef = collection(db, "links");
     const queryRef = query(linksRef, orderBy("created", "asc"));
