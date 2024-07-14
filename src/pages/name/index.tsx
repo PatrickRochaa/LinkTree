@@ -5,7 +5,7 @@ import { db } from "../../services/fireBaseConnection";
 import { FiTrash } from "react-icons/fi";
 
 import {
-  addDoc,
+  setDoc,
   collection,
   onSnapshot,
   query,
@@ -69,7 +69,7 @@ export function Name() {
   }
 
   // funçao para criar nome
-  function handleName(e: FormEvent) {
+  async function handleName(e: FormEvent) {
     e.preventDefault();
 
     if (nome === "" || sobreNome === "") {
@@ -78,7 +78,7 @@ export function Name() {
     }
 
     //cadastrando no DB
-    addDoc(collection(db, "nome"), {
+    await setDoc(doc(db, "nome", "1"), {
       nome: nome,
       sobreNome: sobreNome,
       colorNome: colorNome,
