@@ -1,7 +1,7 @@
 import { useState, FormEvent, useEffect } from "react";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/input";
-import { FiTrash } from "react-icons/fi";
+import { FiTrash, FiLink } from "react-icons/fi";
 import { db } from "../../services/fireBaseConnection";
 
 import {
@@ -170,7 +170,7 @@ export function Admin() {
           type="submit"
           className="bg-blue-600 h-9 rounded-md text-white font-medium gap-4 flex justify-center items-center mb-7"
         >
-          Cadastrar
+          Cadastrar <FiLink size={18} color="#fff" />
         </button>
       </form>
 

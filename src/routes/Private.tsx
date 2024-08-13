@@ -40,7 +40,7 @@ export function Private({ children }: PrivateProps): any {
     return <div></div>;
   }
 
-  // se o usuario nao tiver logado ou nao ive conta
+  // se o usuario nao tiver logado ou nao tem conta
   if (!signed) {
     return <Navigate to={"/login"} />;
   }
