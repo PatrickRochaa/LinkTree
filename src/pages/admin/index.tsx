@@ -1,7 +1,7 @@
 import { useState, FormEvent, useEffect } from "react";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/input";
-import { FiTrash, FiLink } from "react-icons/fi";
+import { FiTrash2, FiLink } from "react-icons/fi";
 import { db } from "../../services/fireBaseConnection";
 
 import {
@@ -82,12 +82,12 @@ export function Admin() {
       created: new Date(),
     })
       .then(() => {
-        console.log("Cadastrado com sucesso");
+        //console.log("Cadastrado com sucesso");
         setNameInput("");
         setUrlInput("");
       })
       .catch((error) => {
-        console.log("erro ao cadastrar");
+        //console.log("erro ao cadastrar");
         console.log(error);
       });
   }
@@ -168,9 +168,9 @@ export function Admin() {
         )}
         <button
           type="submit"
-          className="bg-blue-600 h-9 rounded-md text-white font-medium gap-4 flex justify-center items-center mb-7"
+          className="bg-blue-600 h-9 rounded-md text-white font-medium gap-2 flex justify-center items-center mb-7"
         >
-          Cadastrar <FiLink size={18} color="#fff" />
+          Cadastrar <FiLink size={18} color="#fff" className="rotate-45" />
         </button>
       </form>
 
@@ -188,7 +188,7 @@ export function Admin() {
               className="border border-dashed p-1 rounded bg-neutral-900"
               onClick={() => handleDeleteLink(link.id)}
             >
-              <FiTrash size={18} color="#fff" />
+              <FiTrash2 size={18} color="#fff" />
             </button>
           </div>
         </article>

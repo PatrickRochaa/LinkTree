@@ -2,7 +2,7 @@ import { useState, useEffect, FormEvent } from "react";
 import { Input } from "../../components/input";
 import { Header } from "../../components/Header";
 import { db } from "../../services/fireBaseConnection";
-import { FiTrash } from "react-icons/fi";
+import { FiTrash2 } from "react-icons/fi";
 
 import {
   setDoc,
@@ -62,7 +62,7 @@ export function Name() {
   }, []);
 
   //funçao para deletar
-  async function handleDeleteLink(id: string) {
+  async function handleDeleteName(id: string) {
     const nomeRef = doc(db, "nome", id);
 
     await deleteDoc(nomeRef);
@@ -166,20 +166,20 @@ export function Name() {
         </button>
       </form>
 
-      {name.map((link) => (
+      {name.map((name) => (
         <article
-          key={link.id}
+          key={name.id}
           className="flex items-center justify-between w-11/12 max-w-xl rounded py-3 px-2 mb-2 select-none border-gray-100/25 border"
         >
-          <h1 style={{ color: link.colorNome }}>
-            {link.nome}{" "}
-            <span style={{ color: link.colorSobreNome }}>{link.sobreNome}</span>
+          <h1 style={{ color: name.colorNome }}>
+            {name.nome}{" "}
+            <span style={{ color: name.colorSobreNome }}>{name.sobreNome}</span>
           </h1>
           <button
             className="border border-dashed p-1 rounded bg-neutral-900"
-            onClick={() => handleDeleteLink(link.id)}
+            onClick={() => handleDeleteName(name.id)}
           >
-            <FiTrash size={18} color="#fff" />
+            <FiTrash2 size={18} color="#fff" />
           </button>
         </article>
       ))}

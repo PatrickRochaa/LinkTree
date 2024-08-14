@@ -26,6 +26,7 @@ export function Login() {
       .catch((error) => {
         console.log("erro ao fazer login");
         console.log(error);
+        alert("erro ao fazer login");
       });
   }
 
