@@ -53,7 +53,7 @@ export function Links() {
   //buscando nome criado
   useEffect(() => {
     function loadingNome() {
-      const nomeRef = collection(db, "nome");
+      const nomeRef = collection(db, "usuario");
       const queryNome = query(nomeRef, orderBy("created", "asc"));
 
       getDocs(queryNome).then((snapshot) => {

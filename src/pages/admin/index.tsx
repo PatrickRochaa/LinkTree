@@ -170,7 +170,7 @@ export function Admin() {
           type="submit"
           className="bg-blue-600 h-9 rounded-md text-white font-medium gap-2 flex justify-center items-center mb-7"
         >
-          Cadastrar <FiLink size={18} color="#fff" className="rotate-45" />
+          Cadastrar <FiLink size={18} color="#fff" />
         </button>
       </form>
 
